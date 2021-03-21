@@ -30,4 +30,7 @@ int main(){
 
         integral += alt_integral;
         cout << "Integral = "<<integral<<"\n";
+
+
+    return 0;
 }
