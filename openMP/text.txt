@@ -1,0 +1,1 @@
+Some text to try algo for searching substrings in string.
