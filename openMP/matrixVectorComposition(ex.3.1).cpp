@@ -81,7 +81,7 @@ int main(){
             int j = blocks % counter;
             for(int k = i*h;k<(i+1)*h;++k){
                 for(int l = j*w;l<(j+1)*w;++l){
-                    #pragma omp atomic
+                    #pragma omp critial
                     vec_block[k] = A[k][l] * vec[l];
                 }
             }
