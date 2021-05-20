@@ -13,7 +13,7 @@ int main (int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD,&tasks_number);
     MPI_Status status;
 
-    int p = 0;
+    int process = 0;
     char send_buff[SIZE];
     strcpy(send_buff,MSG);
     int len = strlen(MSG);
@@ -31,7 +31,7 @@ int main (int argc, char** argv) {
     }
     else {
         char recv_from_master[SIZE];
-        MPI_Send(send_buff,strlen(send_buff)+1,MPI_CHAR,p,0,MPI_COMM_WORLD);
+        MPI_Send(send_buff,strlen(send_buff)+1,MPI_CHAR,process,0,MPI_COMM_WORLD);
         MPI_Recv(recv_from_master,SIZE,MPI_CHAR,0,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
         std::cout<<"Received from master process: "<<recv_from_master<<std::endl;
     }
